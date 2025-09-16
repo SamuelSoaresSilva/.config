@@ -1,0 +1,95 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.unicodeHighlight.allowedCharacters": {
+        "": true
+    },
+    "files.autoSave": "afterDelay",
+    "files.autoSaveWhenNoErrors": true,
+    "editor.fontFamily": "'Maple Mono', 'monospace', monospace",
+    "breadcrumbs.enabled": false, 
+    "workbench.sideBar.location": "right",
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.hidesExplorerArrows": true,
+    "workbench.tree.indent": 14,
+    "explorer.compactFolders": false,
+    "explorer.confirmDelete": true,
+    "window.titleBarStyle": "native",
+    "workbench.editor.showTabs": "single",
+    "window.commandCenter": false,
+    "workbench.activityBar.location": "bottom",
+    "workbench.editor.editorActionsLocation": "hidden",
+    "window.menuBarVisibility": "toggle",
+    "workbench.statusBar.visible": false,
+    "window.customTitleBarVisibility": "never",
+    "glassit.alpha": 100,
+    "glassit.step": 5,
+    "editor.minimap.enabled": false,
+    "editor.scrollbar.verticalScrollbarSize": 8,
+    "editor.scrollbar.horizontalScrollbarSize": 8,
+    "workbench.colorTheme": "Dark+ Pure Black (OLED)",
+    "workbench.colorCustomizations": {
+        "[Dark+ Pure Black (OLED)]": {
+            "editor.background": "#13120d",
+    "sideBar.background": "#13120d",
+    "activityBar.background": "#13120d",
+    "statusBar.background": "#13120d",
+    "titleBar.activeBackground": "#13120d",
+    "titleBar.inactiveBackground": "#13120d",
+    "terminal.background": "#13120d",
+
+    // Tabs
+    "editorGroupHeader.tabsBackground": "#13120d",
+    "editorGroupHeader.noTabsBackground": "default",
+    "editorGroupHeader.border": "#13120d",
+    "tab.activeBackground": "#13120d",
+    "tab.inactiveBackground": "#13120d",
+    "tab.unfocusedActiveBackground": "#13120d",
+    "tab.unfocusedInactiveBackground": "#13120d",
+    "tab.border": "#13120d",
+    "tab.activeBorder": "#13120d",
+    "tab.unfocusedActiveBorder": "#13120d",
+    "tab.lastPinnedBorder": "#13120d",
+    "tab.activeModifiedBorder": "#13120d",
+    "tab.inactiveModifiedBorder": "#13120d",
+    "tab.unfocusedActiveModifiedBorder": "#13120d",
+    "tab.unfocusedInactiveModifiedBorder": "#13120d",
+
+    // Scrollbars minimalistas
+    "scrollbarSlider.background": "#44444444",
+    "scrollbarSlider.hoverBackground": "#66666666",
+    "scrollbarSlider.activeBackground": "#88888888",
+
+    // Painéis, terminais e outros
+    "panel.background": "#13120d",
+    "panel.border": "#13120d",
+    "panelTitle.activeBorder": "#13120d",
+
+    // Linhas e divisores
+    "sideBar.border": "#13120d",
+    "activityBar.border": "#13120d",
+    "statusBar.border": "#13120d",
+    "titleBar.border": "#13120d",
+    "editorGroup.border": "#13120d",
+    "editorGroup.dropBackground": "#13120d",
+    "editorGroup.emptyBackground": "#13120d",
+    "editorGroup.focusedEmptyBorder": "#13120d",
+    "editorPane.background": "#13120d",
+
+    // Breadcrumbs (se usar)
+    "breadcrumb.background": "#13120d",
+
+    // Menu e context menu
+    "menu.background": "#13120d",
+    "menu.border": "#13120d",
+
+    // Diffs, highlights e hover (mantido mínimo)
+    "editor.lineHighlightBackground": "#13120d",
+    "editorHoverWidget.background": "#13120d",
+    "editorHoverWidget.border": "#13120d"
+            
+        }
+    },
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    
+
+}

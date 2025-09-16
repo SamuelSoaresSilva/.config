@@ -1,0 +1,97 @@
+* {
+  /* border-radius: 8px; */
+  font-size: 14px;
+  padding: 0px;
+  transition: all 0.15s;
+}
+
+window#waybar {
+  /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
+  /* background-color: rgba(19, 18, 13, 0.5); */
+  background: none;
+}
+
+#battery,
+#network,
+#clock,
+#tray,
+#workspaces,
+#pulseaudio,
+#notification,
+#custom-power,
+tooltip {
+  background-image: linear-gradient(to bottom, #637e91 100%);
+  font-weight: bold;
+  margin: 8px;
+  margin-right: 0px;
+  padding: 2px 3px;
+  border-radius: 5px;
+  color: #383838;
+  border-style: none;
+}
+
+#custom-power {
+  margin-right: 6px;
+  padding-right: 9px;
+}
+
+#pulseaudio:hover, #custom-power:hover, #network:hover {
+  background-image: linear-gradient(to bottom, #82afe9 100%);
+  color: #141216;
+}
+
+#tray menu {
+  background-color: #141216;
+  color: #ff9100;
+  padding: 4px;
+}
+
+#tray menu menuitem {
+  background-image: linear-gradient(to bottom, #27232b 100%);
+  margin: 3px;
+  color: #d8cab8;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: #27232b;
+}
+
+#tray menu menuitem:hover {
+  background-image: linear-gradient(to bottom, #27232b 100%);
+  color: #383838;
+  font-weight: bold;
+}
+
+#workspaces button {
+  all: initial;
+  min-width: 1px;
+  font-weight: bold;
+  color: #d8cab8;
+  margin-right: 0.10cm;
+  margin-left: 0.10cm;
+}
+
+#workspaces button:hover {
+  color: #383838;
+}
+#workspaces button.focused {
+  color: #383838;
+  font-weight: bold;
+}
+#workspaces button.active {
+  color: #383838;
+  font-weight: bold;
+}
+#workspaces button.urgent {
+  color: #fcb167;
+}
+
+#battery {
+  background-color: #222222;
+}
+
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+  color: #1d2021;
+  background-image: linear-gradient(to bottom, #fc4649 100%)
+}

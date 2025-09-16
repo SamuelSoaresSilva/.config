@@ -1,0 +1,35 @@
+* {
+  background: transparent;
+  font-weight: bold;
+  
+}
+
+#window {
+  background-image: linear-gradient(to bottom, rgba(19, 18, 13, 0.5) 100%);
+  border: 3px solid #637e91;
+  border-radius: 10px;
+
+}
+
+#entry:selected {
+  background: #637e91;
+  font-weight: bold;
+  outline: none;
+}
+
+#input {
+  color: #383838;
+  padding: 10px; 
+  border: 0;
+  border-radius: 0;
+}
+#input:focus {
+  background: #47555c;
+  background-color: #637e91;
+  border-radius: 0;
+}
+
+#img {
+  padding: 4px;
+  margin-right: 6px;
+}
