@@ -1,0 +1,28 @@
+*
+
+# !//
+# !//**
+
+!/.gitignore
+
+!/wofi/
+!/wofi/**
+
+!/kitty/
+!/kitty/**
+
+!/waybar/
+!/waybar/**
+
+!/hypr/
+!/hypr/**
+
+!/Code/
+!/Code/User/
+!/Code/User/settings.json
+
+!/networkmanager-dmenu/
+!/networkmanager-dmenu/**
+
+!/c-scripts/
+!/c-scripts/**
