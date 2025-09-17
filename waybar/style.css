@@ -1,6 +1,11 @@
+@define-color primary #637e91;
+@define-color inactive #47555c;
+@define-color urgent #fcb167;
+@define-color dark-bg #13120d;
+
 *{
   all: unset;
-  transition: 200ms ease-in-out;
+  transition: 150ms ease-in-out;
 }
 
 /* ===== Waybar Root ===== */
@@ -10,54 +15,76 @@ window#waybar {
 
 /* ===== Módulos ===== */
 #workspaces { 
-  border: 0px;
+  border-bottom: 3px transparent solid;
+  border-top: 3px transparent solid;
   padding: 1px 0px;
   border-radius: 20px;
 }
+
+#network, #battery, #clock, #pulseaudio, #tray, #custom-power{
+  border-radius: 8px;
+  background-color: #637e91;
+  font-size: 14px;
+  padding: 0 17px 0 15px;
+  margin: 0 0px 0px 5px;
+}
+
+#network:hover, #battery:hover, #pulseaudio:hover, #clock:hover {
+  background-color: #47555c;
+}
+
 #clock { }
-#network { }
+#network { 
+  padding: 0 16px 0 7px;
+}
 #pulseaudio { }
 #battery { }
 #tray { }
-#custom-power { }
+#custom-power { 
+  padding: 0 17px 0 13px;
+}
 
+
+#network.disconnected {
+    background-color: #fcb167;
+}
 /* ===== Workspaces ===== */
 #workspaces button {
   font-size: 0px;
   border-radius: 10px;
-  background-color: black;
+  background-color: #47555c;
   padding: 0px 8px;
   margin: 1px 2px;
 }
 
 #workspaces button:hover{
-  background-color: grey;
+  background-color: #637e91;
 }
 
 #workspaces button.active {
-  background-color: grey;
+  background-color: #637e91;
   padding: 0 15px;
 }
 
-#workspaces button.focused {
-  /* Workspace focado */
-}
+/* #workspaces button.focused { */
+/* } */
 
 #workspaces button.urgent {
-  /* Workspace urgente */
+  background-color: #fcb167;
 }
 
 /* ===== Pulseaudio ===== */
 #pulseaudio.muted {
-  /* Estado mutado */
+  background-color: #fcb167;
+  
 }
 
 /* ===== Battery ===== */
-#battery.charging { }
-#battery.plugged { }
 #battery.warning { }
 #battery.critical { }
-#battery.full { }
+#battery.full { 
+  background-color: #639172;
+}
 
 /* ===== Tray ===== */
 #tray menu { }
@@ -66,22 +93,21 @@ window#waybar {
 
 /* ===== Custom Modules ===== */
 #custom-power {
-  background-color: brown;
 }
 
 #custom-power:hover {
-  /* Hover no botão de energia */
+  background-color: brown;
 }
 
 tooltip {
-  border: white solid 2px;
-  border-radius: 9px;
-  background-color: grey;
+  border: #637e91 solid 3px;
+  border-radius: 10px;
+  background-color: #13120d;
   opacity:0.9;
   padding:5px;
   margin:0px;
 }
 
 tooltip label {
-    color: black;
+    color: white;
 }

@@ -1,15 +1,13 @@
 {
+  "margin-top": 5,
   "margin-bottom": 0,
-  "margin-top": 0,
-  "margin-right": 0,
-  "margin-left": 0,
+  "margin-left": 6,
+  "margin-right": 6,
   "layer": "bot",
   "position": "top",
   "reload_style_on_change": true,
-
   "modules-left": [
-    "hyprland/workspaces",
-    "sway/workspaces"
+    "hyprland/workspaces"
   ],
   "modules-center": [
   ],
@@ -25,16 +23,14 @@
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": false,
-    "tooltip": false
-  },
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "tooltip": false
-  },
-  "tray": {
-    "spacing": 10,
-    "tooltip": false
+    "tooltip": false,
+    "persistent-workspaces": {
+             "*": 3
+        },
+    "format": "{}",
+    "format-icons": {
+      "default": ""
+    }
   },
   "clock": {
     "format": "󰅐  {:%H:%M}",
@@ -55,50 +51,55 @@
     }
   },
   "network": {
-    "format-wifi": "   {bandwidthDownBits}",
-    "format-ethernet": "   {bandwidthDownBits}",
-    "format-disconnected": "󰤮   No Network",
+    "format-wifi": "",
+    "format-ethernet": "",
+    "format-disconnected": "󰤮",
     "interval": 8,
     "tooltip-format": " {ifname} via {gwaddri}",
     "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
     "tooltip-format-disconnected": "⚠  Disconnected",
-    "on-click": "networkmanager_dmenu"
+    "on-click": "networkmanager_dmenu" 
   },
+
   "pulseaudio": {
     "scroll-step": 5,
-    "max-volume": 150,
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{icon}  {volume}%",
+    "max-volume": 90,
+    "format": "{icon}",
+    "format-muted": "",
     "format-icons": [
       "",
       "",
-      " "
+      ""
     ],
-    "nospacing": 1,
-    "format-muted": " ",
     "on-click": "pavucontrol",
     "tooltip": false
   },
+
   "battery": {
     "states": {
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity: >3}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": "󰂄{capacity}%",
-    "format-alt": "{icon} {time}",
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
     "format-full": "󱈑 {capacity}%",
     "format-icons": [
       "󱊡",
       "󱊢",
       "󱊣"
-    ]
+    ],
+    "tooltip": false
   },
+
+  "tray": {
+    "spacing": 8
+  },
+
   "custom/power": {
     "format": "⏻",
-    "on-click": "poweroff",
+    "on-click": "wlogout",
     "tooltip": false
   }
 }
