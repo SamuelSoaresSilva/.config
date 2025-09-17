@@ -1,16 +1,18 @@
 *{
   all: unset;
+  transition: 200ms ease-in-out;
 }
 
 /* ===== Waybar Root ===== */
 window#waybar {
-  /* Barra inteira */
   background-color: transparent;
 }
 
 /* ===== Módulos ===== */
 #workspaces { 
-  background-color: black;
+  border: 0px;
+  padding: 1px 0px;
+  border-radius: 20px;
 }
 #clock { }
 #network { }
@@ -21,11 +23,20 @@ window#waybar {
 
 /* ===== Workspaces ===== */
 #workspaces button {
-  /* Botão normal */
+  font-size: 0px;
+  border-radius: 10px;
+  background-color: black;
+  padding: 0px 8px;
+  margin: 1px 2px;
+}
+
+#workspaces button:hover{
+  background-color: grey;
 }
 
 #workspaces button.active {
-  background-color: aqua;
+  background-color: grey;
+  padding: 0 15px;
 }
 
 #workspaces button.focused {
@@ -55,9 +66,22 @@ window#waybar {
 
 /* ===== Custom Modules ===== */
 #custom-power {
-  /* Botão de energia */
+  background-color: brown;
 }
 
 #custom-power:hover {
   /* Hover no botão de energia */
+}
+
+tooltip {
+  border: white solid 2px;
+  border-radius: 9px;
+  background-color: grey;
+  opacity:0.9;
+  padding:5px;
+  margin:0px;
+}
+
+tooltip label {
+    color: black;
 }
