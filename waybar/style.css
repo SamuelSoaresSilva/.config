@@ -1,7 +1,7 @@
-@define-color primary #637e91;
-@define-color inactive #47555c;
-@define-color urgent #fcb167;
-@define-color dark-bg #13120d;
+/* @define-color primary #637e91; */
+/* @define-color inactive #47555c; */
+/* @define-color urgent #fcb167; */
+/* @define-color dark-bg #13120d; */
 
 *{
   all: unset;
@@ -10,38 +10,46 @@
 
 /* ===== Waybar Root ===== */
 window#waybar {
-  background-color: transparent;
+  /* background-color: alpha(#13120d, 0.6); */
+  font-family: 'HurmitNF-Regular';
+  font-weight: bolder;
+  
 }
 
 /* ===== Módulos ===== */
 #workspaces { 
   border-bottom: 3px transparent solid;
   border-top: 3px transparent solid;
-  padding: 1px 0px;
+  padding: 3px 0px 2px 5px;
   border-radius: 20px;
 }
 
 #network, #battery, #clock, #pulseaudio, #tray, #custom-power{
   border-radius: 8px;
-  background-color: #637e91;
+  background-color: transparent;
   font-size: 14px;
-  padding: 0 17px 0 15px;
-  margin: 0 0px 0px 5px;
+  margin: 5px 0px 0px 5px;
 }
 
 #network:hover, #battery:hover, #pulseaudio:hover, #clock:hover {
-  background-color: #47555c;
+  color: #acacac;
 }
 
 #clock { }
 #network { 
-  padding: 0 16px 0 7px;
+  padding: 0 12px 0 4px;
 }
-#pulseaudio { }
-#battery { }
+#pulseaudio {
+    padding: 0 10px 0 4px;
+}
+#battery { 
+  padding: 0 3px 0 3px;
+
+}
 #tray { }
 #custom-power { 
-  padding: 0 17px 0 13px;
+  margin-right: 5px;
+  padding: 0 7px 0 4px;
 }
 
 
@@ -50,10 +58,11 @@ window#waybar {
 }
 /* ===== Workspaces ===== */
 #workspaces button {
+  border: #637e91 solid;
   font-size: 0px;
   border-radius: 10px;
   background-color: #47555c;
-  padding: 0px 8px;
+  padding: 0px 6px;
   margin: 1px 2px;
 }
 
@@ -62,7 +71,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background-color: #637e91;
+  border: #637e91 solid 3px;
+  background-color: #47555c;
   padding: 0 15px;
 }
 
@@ -82,9 +92,7 @@ window#waybar {
 /* ===== Battery ===== */
 #battery.warning { }
 #battery.critical { }
-#battery.full { 
-  background-color: #639172;
-}
+#battery.full { }
 
 /* ===== Tray ===== */
 #tray menu { }
@@ -96,14 +104,13 @@ window#waybar {
 }
 
 #custom-power:hover {
-  background-color: brown;
+  color: rgb(253, 113, 113);
 }
 
 tooltip {
   border: #637e91 solid 3px;
   border-radius: 10px;
-  background-color: #13120d;
-  opacity:0.9;
+  background-color: alpha(#13120d, 0.6);
   padding:5px;
   margin:0px;
 }
