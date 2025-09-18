@@ -5,7 +5,8 @@
     },
     "files.autoSave": "afterDelay",
     "files.autoSaveWhenNoErrors": true,
-    "editor.fontFamily": "'Maple Mono', 'monospace', monospace",
+    "editor.fontFamily": "'HurmitNF-Regular', 'monospace', monospace",
+    "editor.fontWeight": "600",
     "breadcrumbs.enabled": false, 
     "workbench.sideBar.location": "right",
     "workbench.iconTheme": "material-icon-theme",
@@ -90,6 +91,9 @@
         }
     },
     "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "css.lint.unknownAtRules": "ignore",
+    "css.lint.semicolon": "ignore"
+
     
 
 }
