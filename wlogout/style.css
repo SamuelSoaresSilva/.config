@@ -8,8 +8,7 @@
 window {
     font-family: 'HurmitNF-Regular';
 	font-weight: bolder;
-	background-color: alpha(#13120d, 0.7);
-  	/* opacity:0.9; */
+	background-color: transparent;
 	font-size: 16pt;
 
 }
@@ -22,12 +21,19 @@ button {
 	border-radius: 50px; /* Increased border radius for a more rounded look */
 	transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), background-color 0.2s ease-in-out;
 	color: white;
-	background-color: #637e91;
+	background-color: alpha(#13120d, 0.7);
 }
 
 
 button:hover {
-    background-color: alpha(#47555c, 0.9);
+    background-color: alpha(#47555c, 0.5);
+	opacity: 0.8;
+    background-size: 25%;
+    margin: 20px;
+}
+
+button:focus {
+	background-color: alpha(#47555c, 0.5);
 	opacity: 0.8;
     background-size: 25%;
     margin: 20px;
