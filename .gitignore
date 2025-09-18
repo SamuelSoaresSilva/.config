@@ -26,3 +26,6 @@
 
 !/c-scripts/
 !/c-scripts/**
+
+!/wlogout/
+!/wlogout/**
