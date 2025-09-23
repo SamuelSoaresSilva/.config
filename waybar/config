@@ -7,33 +7,94 @@
   "position": "top",
   "reload_style_on_change": true,
   "modules-left": [
+    "tray",
+    "custom/separator",	
+    "custom/separator",	
+    "custom/power",
     "hyprland/workspaces"
   ],
   "modules-center": [
+    
+    "mpris"
   ],
   "modules-right": [
-    "network",
+    "group/connections",
+    "custom/separator",   
     "battery",
-    "pulseaudio",
-    "tray",
-    "custom/notification",
+    "custom/separator",  
+    "group/audio",
     "clock",
-    "custom/power"
+    "custom/separator"
   ],
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "tooltip": false,
-    "persistent-workspaces": {
-             "*": 3
-        },
-    "format": "{}",
-    "format-icons": {
-      "default": ""
-    }
+
+  "tray": {
+	  "icon-size": 20,
+    "spacing": 8
   },
+
+  "custom/separator": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  },
+
+  "custom/power": {
+    "format": "",
+    "on-click": "wlogout",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "show-special": false,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "persistent-workspaces": {
+        "*": 1
+    },
+    "format-icons": {
+      "active": "",
+      "default": "" 
+    } 
+  },
+
+  "mpris": {
+    "interval": 10,
+    "format": "{player_icon} <i>{dynamic}</i>",
+    "format-paused": "{status_icon} <i>{artist}: {title}</i>",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "scroll-step": 5.0,
+    "on-scroll-up": "~/.config/c-scripts/volume.sh --inc",
+    "on-scroll-down": "~/.config/c-scripts/volume.sh --dec",
+    "smooth-scrolling-threshold": 1,
+    "tooltip": true,
+    "tooltip-format": "{status_icon} {dynamic}\nLeft Click: Pause\nRight Click: Next",
+    "player-icons": {
+      "chromium": "",
+      "default": "",
+      "firefox": "",
+      "kdeconnect": "",
+      "mopidy": "",
+      "mpv": "󰐹",
+      "spotify": "",
+      "vlc": "󰕼"
+    },
+    "status-icons": {
+      "paused": "󰐎",
+      "playing": "",
+      "stopped": ""
+    },
+    "dynamic-order": ["artist", "title"],
+    "max-length": 37
+  },
+    
   "clock": {
-    "format": "{:%H:%M}",
+    "interval": 60,
+    "format": "{:%b %a %d   %I:%M %p}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "mode": "month",
@@ -50,6 +111,18 @@
       }
     }
   },
+
+  "bluetooth": {
+    "format": " ",
+    "format-disabled": "󰂳",
+    "format-connected": "󰂱 {num_connections}",
+    "tooltip-format": " {device_alias}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
+    "tooltip": true,
+    "on-click": "blueman-manager"
+  },
+
   "network": {
     "format-wifi": "",
     "format-ethernet": "",
@@ -60,6 +133,44 @@
     "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
     "tooltip-format-disconnected": "⚠  Disconnected",
     "on-click": "networkmanager_dmenu" 
+  },
+
+  "group/connections": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "bluetooth",
+      "transition-left-to-right": true
+          },
+    "modules": [
+      "network",
+      "bluetooth"
+    ]
+  },
+
+  "group/audio": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "pulseaudio",
+      "transition-left-to-right": true
+          },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio#microphone"
+    ]
+  },
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "on-click": "~/.config/c-scripts/volume.sh --toggle-mic",
+    "on-click-right": "pavucontrol -t 4",
+    "on-scroll-up": "~/.config/c-scripts/volume.sh --mic-inc",
+    "on-scroll-down": "~/.config/c-scripts/volume.sh --mic-dec",
+    "tooltip-format": "{source_desc} | {source_volume}%",
+    "scroll-step": 5
   },
 
   "pulseaudio": {
@@ -76,30 +187,29 @@
     "tooltip": false
   },
 
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{icon} {capacity}",
-    "format-charging": " {capacity}",
-    "format-plugged": " {capacity}",
-    "format-full": "󱈑 {capacity}",
+"battery": {
+	"align": 0,
+	"rotate": 0,
+	"full-at": 100,
+	"design-capacity": false,
+	"states": {
+		"good": 95,
+		"warning": 30,
+		"critical": 15
+	},
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": "󱘖 {capacity}%",
+    "format-alt-click": "click",
+    "format-full": "{icon} Full",
+    "format-alt": "{icon} {time}",
     "format-icons": [
-      "󱊡",
-      "󱊢",
-      "󱊣"
+      "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
     ],
-    "tooltip": false
-  },
-
-  "tray": {
-    "spacing": 8
-  },
-
-  "custom/power": {
-    "format": "⏻",
-    "on-click": "wlogout",
-    "tooltip": false
+    "format-time": "{H}h {M}min",
+    "tooltip": true,
+    "tooltip-format": "{timeTo} {power}w",
+    "on-click-middle": "~/.config/c-scripts//ChangeBlur.sh",
+    "on-click-right": "~/.config/c-scripts//Wlogout.sh"
   }
 }
