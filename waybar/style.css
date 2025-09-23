@@ -68,7 +68,6 @@ tooltip label{
 #taskbar button,
 #workspaces button {
 	color: @secondary;
-  font-weight: bolder;
   box-shadow: none;
 	text-shadow: none;
 	padding: 0px;
@@ -236,7 +235,7 @@ tooltip label{
   transition: 500ms;
 }
 
-#custom-power:hover{
+*:hover{
   color: #fcb167;
 }
 
