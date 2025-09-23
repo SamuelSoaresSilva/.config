@@ -1,8 +1,8 @@
 {
-  "margin-top": 0,
-  "margin-bottom": 0,
+  "margin-top": 4,
+  "margin-bottom": 1,
   "margin-left": 0,
-  "margin-right": 0,
+  "margin-right": 3,
   "layer": "bot",
   "position": "top",
   "reload_style_on_change": true,
@@ -24,6 +24,7 @@
     "custom/separator",  
     "group/audio",
     "clock",
+    "custom/separator", 
     "custom/separator"
   ],
 
@@ -33,7 +34,7 @@
   },
 
   "custom/separator": {
-    "format": " ",
+    "format": "",
     "interval": "once",
     "tooltip": false
   },
@@ -41,7 +42,8 @@
   "custom/power": {
     "format": "",
     "on-click": "wlogout",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "EndeavourOS"
   },
 
   "hyprland/workspaces": {
@@ -56,8 +58,8 @@
         "*": 1
     },
     "format-icons": {
-      "active": "",
-      "default": "" 
+      "active": "(*)",
+      "default": "( )" 
     } 
   },
 
@@ -94,7 +96,7 @@
     
   "clock": {
     "interval": 60,
-    "format": "{:%b %a %d   %I:%M %p}",
+    "format": "{:%b %a %d  %I:%M %p}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "mode": "month",
